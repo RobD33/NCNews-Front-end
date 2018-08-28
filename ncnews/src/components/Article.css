@@ -1,0 +1,35 @@
+.article {
+    border: 2px solid royalblue;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template: 0.5fr 0.8fr 0.5fr/ 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        'title title title user'
+        'vote body body body'
+        'vote comments comments comments'
+}
+
+.vote {
+    grid-area: vote;
+}
+
+.title {
+    grid-area: title;
+    width: 70%;
+    height: 20%;
+}
+
+.body {
+    grid-area: body;
+}
+
+.user {
+    grid-area: user;
+}
+
+.comments {
+    grid-area: comments;
+}

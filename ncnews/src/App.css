@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+  background-color: whitesmoke;
+  display: grid;
+  width: 99%;
+  grid-template: 0.1fr 0.1fr 0.7fr/ 0.2fr 0.4fr;
+  grid-template-areas:
+    'headerimg headerimg'
+    'login navbar'
+    'page page'
+}
+
+.login {
+  border: 5px solid black;
+  border-radius: 5%;
+  margin: 2%;
+  grid-area: login;
+  padding: 2%;
+  width: 20vw;
+  height: 10vh;
+  font-size: 5vh;
+}
+
+.navbar {
+  grid-area: navbar;
+  margin: 5vw;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.navlink {
+  border: 2px solid darkblue;
+  border-radius: 5%;
+  font-size: 5vw;
+  margin: 2vw;
+  padding: 2%;
+  color: darkred;
+  background-color: darkgray;
+}
+.headerimg {
+  height: 20vh;
+  width: 90vw;
+  grid-area: headerimg;
+}
+
+.page {
+  border: 2px solid darkblue;
+  grid-area: page;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
