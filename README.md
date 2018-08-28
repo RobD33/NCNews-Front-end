@@ -1,5 +1,5 @@
 
-Northcoders News is a social news website, which gives you the ability to rate the articles provided and a chance to comment and vote on comments. It has articles which are divided into topics. It can be found at LINK It has been tested to minumum 375 x 812 screen size and is fully responsive to a larger screen size.
+Northcoders News is a social news website, which gives you the ability to rate the articles provided and a chance to comment and vote on comments. It has articles which are divided into topics. It can be found at http://practical-elion-7fb7be.netlify.com It has been tested to minumum 375 x 812 screen size and is fully responsive to a larger screen size.
 
 Prerequisites
 
