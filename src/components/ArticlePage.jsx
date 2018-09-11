@@ -21,7 +21,7 @@ class ArticlePage extends Component {
             return <Redirect to={{pathname, state}}/>
         } else return (
             <div className='page'>
-                {!this.state.article && <h1><Wave 
+                {!this.state.article ? <h1><Wave 
                     text="Loading..."
                     direction='right'
                     delay={1}
@@ -29,17 +29,19 @@ class ArticlePage extends Component {
                     effect='color'
                     effectChange='red'
                     effectDuration={1}
-                    /></h1>}
-                {this.state.article && <Article 
-                                            article={this.state.article} 
-                                            user={this.props.user}
-                                            short={false}
-                                            />}
-                {this.state.article && <Post 
-                                            type='comment' 
-                                            path={`articles/${this.state.article._id}/comments`} 
-                                            addContent={this.addContent} user={this.props.user} 
-                                            />}
+                    /></h1>
+                    :  <span>
+                        <Article 
+                            article={this.state.article} 
+                            user={this.props.user}
+                            short={false}
+                            />
+                        <Post 
+                            type='comment' 
+                            path={`articles/${this.state.article._id}/comments`} 
+                            addContent={this.addContent} user={this.props.user} 
+                            />
+                    </span>}
                 <span className='comments'>{this.state.comments.map(comment => {
                     return <Comment comment={comment} key={comment._id} user={this.props.user} removeComment={this.removeComment}/>
                 })}</span>
@@ -51,6 +53,7 @@ class ArticlePage extends Component {
         const {article_id} = this.props.match.params
         Promise.all([api.fetchComments(article_id), api.fetchArticle(article_id)])
             .then(([commentsResponse, articleResponse]) => {
+                console.dir(commentsResponse)
                 if(commentsResponse.msg || articleResponse.msg) {
                     const error = commentsResponse.msg ? commentsResponse : articleResponse
                     this.setState({

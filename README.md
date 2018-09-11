@@ -1,8 +1,6 @@
-
 Northcoders News is a social news website, which gives you the ability to rate the articles provided and a chance to comment and vote on comments. It has articles which are divided into topics. It can be found at http://practical-elion-7fb7be.netlify.com It has been tested to minumum 375 x 812 screen size and is fully responsive to a larger screen size.
 
-Prerequisites
-
+##Prerequisites
 You will need to install:
 
     "axios": "^0.18.0",
@@ -18,14 +16,12 @@ using the npm i command in the command line and then and type:
 npm start
 into the terminal to run localhost.
 
-Built With
-
+##Built With
 React - The JS Framework
 Create React App - This project was bootstrapped with create-react-app
 
-Authors
-
+##Authors
 Robert Davidson - RobD33
-Northcoders - Initial work - (https://northcoders.com/)
-Acknowledgments
+
+##Acknowledgments
 Northcoders

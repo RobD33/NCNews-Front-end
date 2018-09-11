@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class LogIn extends Component {
     state = {
-        username:''
+        username:'tickle122'
     }
     render() {
         return (
@@ -12,6 +12,7 @@ class LogIn extends Component {
                 <h4>{this.props.user.name ? `Logged in as ${this.props.user.name}` : 'Log In'}</h4>
                 {!this.props.user.name && <input type='text' placeholder='Username' onChange={this.handleChange} value={this.state.username}/>}
                 <button>{this.props.user.name ? 'Log Out' : 'Log In'}</button>
+                <p style={{fontSize: '1vh'}}>Click 'Log In' to log in as Tom Tickle (demo)</p>
             </form>
         );
     }

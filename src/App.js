@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, NavLink, Link, Switch } from 'react-router-dom'
-import * as api from './api';
+import { Route, Link, Switch } from 'react-router-dom'
 import ArticlesPage from './components/ArticlesPage';
 import ArticlePage from './components/ArticlePage';
 import LogIn from './components/LogIn';
 import Error from './components/Error';
 import UserProfile from './components/UserProfile';
+import Navbar from './components/Navbar';
 
 
 class App extends Component {
@@ -20,9 +20,7 @@ class App extends Component {
       <div className="App">
         <Link to='/' className='header'><img src = {require('./Images/Northcoders.png')} alt='Northcoders' className='headerimg'/></Link>
         <LogIn setUser={this.setUser} user={this.state.user} />
-        {this.state.topics.length && <span className='navbar'>{this.state.topics.map(topic => {
-          return <NavLink to={`/topic/${topic.slug}`}  className='navlink'>{topic.title}</NavLink>
-        })}</span>}
+        <Navbar />
         <Switch>
           <Route exact path='/' render={(props) => <ArticlesPage {...props} user={this.state.user}/>}/>
           <Route exact path='/topic/:topic_slug' render={(props) => <ArticlesPage {...props} user={this.state.user}/>}/>
@@ -32,15 +30,6 @@ class App extends Component {
         </Switch>
       </div>
     );
-  }
-
-  componentDidMount() {
-      api.fetchTopics()
-        .then(topics => {
-        this.setState({
-          topics
-        })
-      })
   }
 
   setUser = (user) => {
